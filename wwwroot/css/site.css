@@ -21,5 +21,11 @@ body {
 
 a{
     text-decoration: none;
-    color: black; 
+    color: black;  
+}
+.boldMe{
+    font-weight: bold;
+}
+.borderMe {
+    border: 1px solid grey;
 }

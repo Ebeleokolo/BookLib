@@ -1,14 +1,49 @@
 ﻿<header>
-    <nav id="myNav">
+
+  @*   <nav id="myNav" style="display: flex; justify-content: space-between; align-items: center;">
         <div id="logo">Logo</div>
         <div id="menu">
-
+            <div>
+                Wish to search
+                <a id="navBookBtn" href=""><i class="fa-regular fa-circle"></i>Book</a>
+                or
+                <a id="navCDBtn" href=""><i class="fa-regular fa-circle"></i>CDs</a>
+                Only available copies will display </div>
+            
+            <div></div>
         </div>
         <div id="LoginPanel">
             <a href="#">SignIn</a>&nbsp; <a href="#">Favourite</a>
+        </div>
+    </nav> *@
 
+    <nav id="myNav" style="display: flex; justify-content: space-between; align-items: center;">
+        <div id="logo">Logo</div>
+        <div id="menu">
+            <div>
+                <span class="boldMe"> Wish to search </span>
+                <a id="navBookBtn" href=""><i class="fa-regular fa-circle"></i>Book</a>
+                or
+                <a id="navCDBtn" href=""><i class="fa-regular fa-circle"></i>CDs</a>
+                Only available copies will display
+                <div id="searchFormPanel" class="borderMe">
+                    <form id="searchForm">
+                        <input placeholder="Winning in the digital age" />
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+
+
+            </div>
+            
+        </div>
+        <div id="LoginPanel">
+            <a href="#">SignIn</a>&nbsp; <a href="#">Favourite</a>
         </div>
     </nav>
+
+
+
        @*  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BookLib</a>

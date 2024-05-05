@@ -1,10 +1,13 @@
 ﻿#myNav {
     display: grid;
     justify-content: space-between;
-      
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid grey;
+    height:100px;
 }
 #myNav div{
-    border : 1px solid grey;
+  /* border : 1px solid grey; */
 }
 #logo{
     width: 50px;
@@ -15,7 +18,47 @@
     background: #cccccc;
 
 }
-#LoginPanel{
-    text-align: right;
-    
+#navBookBtn, #navCDBtn{
+    border:1px solid grey;
+    padding: 5px;
+    border-radius: 10px;
+    border-inline-end-color: black;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 15px;
+    background: white;
+}
+
+/*#navBookBtn:hover, #navCDBtn {
+   background: skyblue;
+   color: white;
+   border: none;
+}*/
+#searchFormPanel{
+    position: relative;
+    height: 35px;
+    /*overflow: hidden;*/
+    margin: 20px 0px;
+    padding-top: 40px;
+}
+#searchForm input {
+    width: 100%;
+    height: inherit;
+    padding: 3px;
+}
+#searchForm button {
+    position: absolute;
+    right: 0px;
+    min-width: 120px;
+    width: 120px;
+    color: white;
+    background: #cccccc;
+    border: none;
+    outline: none;
+    height: inherit;
+    padding: 3px;
+    padding-bottom: 6px;
+}
+#menu{
+
 }
