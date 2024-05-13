@@ -13,8 +13,9 @@
         public string PublicId { get; set; } = "";
         public string CopiesInLibrary { get; set; } = "";
         public string AddedBy { get; set; } = "";
-        public string PublishedDate { get; set; } = "";
+        public DateOnly PublishedDate { get; set; }
         //Nav property
-        public Review Review { get; set; }
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
+        public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
     }
 }
