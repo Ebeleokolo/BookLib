@@ -13,7 +13,10 @@
         public string PublicId { get; set; } = "";
         public string CopiesInLibrary { get; set; } = "";
         public string AddedBy { get; set; } = "";
-        public DateOnly PublishedDate { get; set; }
+        public DateTime PublishedDate { get; set; }
+        public string BookVersion { get; set; } = "";
+        public int CategoryId { get; set; }
+        public int SubCategoryId { get; set; }
         //Nav property
         public ICollection<Review> Reviews { get; set; } = new List<Review>();
         public ICollection<Rating> Ratings { get; set; } = new List<Rating>();

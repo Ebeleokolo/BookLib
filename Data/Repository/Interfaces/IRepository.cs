@@ -4,10 +4,10 @@ namespace BookLib.Data.Repository.Interfaces
 {
     public interface IRepository
     {
-        Task<int> Add<T>(T entity);
-        Task<int> Update<T>(T entity);
-        Task<int> Delete<T>(T entity);
-        Task<IQueryable<T>> Get<T>();
-        Task<T> Get<T>(string Id);
+        Task<int> AddAsync<T>(T entity) where T : class;
+        Task<int> UpdateAsync<T>(T entity) where T : class;
+        Task<int> DeleteAsync<T>(T entity) where T : class;
+        Task<IQueryable<T>> GetAsync<T>() where T : class;
+        Task<T> GetAsync<T>(string Id) where T : class;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BookLib.Models;
 using BookLib.Models.ViewModels;
+using BookLib.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -8,10 +9,12 @@ namespace BookLib.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IBookService _bookService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IBookService bookService)
         {
             _logger = logger;
+            _bookService = bookService;
         }
 
         [HttpGet]

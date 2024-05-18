@@ -1,4 +1,8 @@
 using BookLib.Data;
+using BookLib.Data.Repository.Implementations;
+using BookLib.Data.Repository.Interfaces;
+using BookLib.Services.Implementation;
+using BookLib.Services.Interface;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +12,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BookLibDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("default")));
 
+builder.Services.AddScoped<IRepository, Repository>();
+builder.Services.AddScoped<IBookService, BookService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

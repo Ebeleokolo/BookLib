@@ -1,4 +1,5 @@
 ﻿using BookLib.Data.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookLib.Data.Repository.Implementations
 {
@@ -10,29 +11,31 @@ namespace BookLib.Data.Repository.Implementations
             _ctx = ctx;
         }
 
-        public Task<int> Add<T>(T entity)
+        public async Task<int> AddAsync<T>(T entity) where T : class
         {
-            throw new NotImplementedException();
+            await _ctx.Set<T>().AddAsync(entity);
+            return await _ctx.SaveChangesAsync();
         }
 
-        public Task<int> Delete<T>(T entity)
+
+        public async Task<int> DeleteAsync<T>(T entity) where T : class
         {
-            throw new NotImplementedException();
+            _ctx.Set<T>().Remove(entity);
+            return await _ctx.SaveChangesAsync();
         }
 
-        public Task<IQueryable<T>> Get<T>()
+        public async Task<IQueryable<T>> GetAsync<T>() where T : class
         {
-            throw new NotImplementedException();
+            return _ctx.Set<T>().AsQueryable();
         }
-
-        public Task<T> Get<T>(string Id)
+        public async Task<T?> GetAsync<T>(string id) where T : class
         {
-            throw new NotImplementedException();
+            return await _ctx.Set<T>().FindAsync(id);
         }
-
-        public Task<int> Update<T>(T entity)
+        public async Task<int> UpdateAsync<T>(T entity) where T : class
         {
-            throw new NotImplementedException();
+            _ctx.Set<T>().Update(entity);
+            return await _ctx.SaveChangesAsync();
         }
     }
 }
